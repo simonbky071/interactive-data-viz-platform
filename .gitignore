@@ -1,0 +1,17 @@
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.log
+.pytest_cache/
+*.sqlite3
+# PyCharm
+.idea/
+# Uploads folder
+Uploads/*
