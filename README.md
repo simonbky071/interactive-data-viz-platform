@@ -11,8 +11,8 @@ A web application built with Flask and Plotly that allows users to upload CSV or
 - **Error Handling**: User-friendly error messages for invalid files, permissions, or visualization issues.
 
 ## Demo
-- **Live Demo**: [Insert live demo URL after Render deployment]
-- **GitHub Repository**: [Insert GitHub repo URL after creation]
+- **Live Demo**: [https://data-viz-platform.onrender.com](https://data-viz-platform.onrender.com)
+- **GitHub Repository**: https://github.com/simonbky071/interactive-data-viz-platform](https://github.com/simonbky071/interactive-data-viz-platform)
 
 ## Technologies
 - **Backend**: Python, Flask, pandas, NumPy, Plotly
