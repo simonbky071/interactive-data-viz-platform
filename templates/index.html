@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Upload Dataset{% endblock %}
+{% block content %}
+<!-- Reduced card padding -->
+<div class="card shadow-sm p-3">
+    <h2 class="fs-4 mb-2">Upload Your Dataset</h2>
+    <form method="post" enctype="multipart/form-data" action="/upload">
+        <!-- Reduced input margin -->
+        <div class="mb-2">
+            <input type="file" class="form-control form-control-sm" name="file" accept=".csv,.json">
+        </div>
+        <!-- Smaller button -->
+        <button type="submit" class="btn btn-success btn-sm">Upload</button>
+    </form>
+</div>
+{% endblock %}

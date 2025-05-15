@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block title %}Results{% endblock %}
+{% block content %}
+<h2 class="fs-4 mb-2">Dataset: {{ filename }}</h2>
+<!-- Reduced card padding and margin -->
+<div class="card mb-2 p-3">
+    <div class="card-body py-2">
+        <h3 class="fs-5 mb-2">Statistics</h3>
+        <p class="mb-1">Rows: {{ stats.rows }}</p>
+        <p class="mb-1">Columns: {{ stats.columns | join(', ') }}</p>
+        <p class="mb-1">Missing Values: {{ stats.missing | tojson }}</p>
+        <form method="post" action="/clean_data">
+            <input type="hidden" name="filename" value="{{ filename }}">
+            <button type="submit" class="btn btn-success btn-sm mt-1">Drop Missing Values</button>
+        </form>
+    </div>
+</div>
+<div class="card mb-2 p-3">
+    <div class="card-body py-2">
+        <h3 class="fs-5 mb-2">Visualize</h3>
+        <form method="post" action="/visualize">
+            <input type="hidden" name="filename" value="{{ filename }}">
+            <div class="mb-2">
+                <label class="form-label mb-0">X-Axis:</label>
+                <select name="x_axis" class="form-control form-control-sm">
+                    {% for col in stats.columns %}
+                    <option value="{{ col }}">{{ col }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-2">
+                <label class="form-label mb-0">Y-Axis:</label>
+                <select name="y_axis" class="form-control form-control-sm">
+                    {% for col in stats.columns %}
+                    <option value="{{ col }}">{{ col }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-2">
+                <label class="form-label mb-0">Plot Type:</label>
+                <select name="plot_type" class="form-control form-control-sm">
+                    <option value="scatter">Scatter</option>
+                    <option value="bar">Bar</option>
+                    <option value="line">Line</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-success btn-sm">Generate Plot</button>
+        </form>
+        {% if plot_html %}
+        <div class="mt-2">{{ plot_html | safe }}</div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

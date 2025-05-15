@@ -1,0 +1,40 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    /* Ensure content fits tightly */
+    margin: 0;
+    padding: 0;
+}
+.card {
+    animation: fadeIn 1s ease-in;
+    /* Tighter shadow */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+.btn-success {
+    background-color: #50C878;
+    border-color: #50C878;
+    /* Smoother hover */
+    transition: background-color 0.2s;
+}
+.btn-success:hover {
+    background-color: #45a567;
+    border-color: #45a567;
+}
+.alert {
+    /* Tighter alerts */
+    padding: 8px;
+    margin-bottom: 8px;
+}
+.form-control-sm {
+    /* Ensure inputs are compact */
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+}
+.form-label {
+    /* Smaller labels */
+    font-size: 0.875rem;
+}
